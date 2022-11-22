@@ -1,9 +1,8 @@
-
 // 1. Set up the Streaming Speech Recognition API
-var final_transcript = 'The following is a conversation with the TotoB12 AI assistant. The assistant is helpful, creative, clever, and very friendly. \n\
+var final_transcript = 'The following is a conversation with the TotoB12 AI. The assistant is helpful, creative, clever, and very friendly. \n\
 \n\
 Human: Hello, who are you?\n\
-AI: I am an AI created by TotoB12. How can I help you today?\n\
+AI: I am TotoB12. How can I help you today?\n\
 Human: ';
 
 var completionWord = "complete";
@@ -86,12 +85,14 @@ function startButton() {
 }
 startButton();
 
+// mine // keyopenai = "sk-ZkW9T2jPeSSz0SDsrKPST3B" + "lbkFJW7oS0ijczW2sbEcKPEGF";
+
 // 2. Submit to GPT-3 and receive a streaming response...
-if (!new URLSearchParams(window.location.search).has("key")) {
-  window.history.replaceState({}, 'OpenAI Voice', "?key=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");
-}
+// if (!new URLSearchParams(window.location.search).has("key")) {
+//   window.history.replaceState({}, 'OpenAI Voice', "?key=keyopenai");
+// }
 function queryAPI() {
-  if (new URLSearchParams(window.location.search).get("key") === "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") {
+  if (new URLSearchParams(window.location.search).get("key") === "sk-ZkW9T2jPeSSz0SDsrKPST3B" + "lbkFJW7oS0ijczW2sbEcKPEGF") {
     temporary_status = "\n\n--~*Error, please contact TotoB12 at totob12github@gmail.com with code 737.*~--\n\nExiting...";
     updateStatus();
     return;
@@ -100,7 +101,7 @@ function queryAPI() {
   let AIRequest = new SSE("https://api.openai.com/v1/engines/davinci/completions", {
     headers: {
       'Content-Type': 'application/json',
-      "Authorization": "Bearer "+ "sk-Taigfxs8IOsHrZu0hDZnT3" + "BlbkFJtT8920BxEQcJrZ4RAVlw"
+      "Authorization": "Bearer "+ "sk-ZkW9T2jPeSSz0SDsrKPST3B" + "lbkFJW7oS0ijczW2sbEcKPEGF"
       // "Authorization": "Bearer "+ new URLSearchParams(window.location.search).get("key")
     },
     payload: JSON.stringify({
@@ -157,7 +158,7 @@ function speakVoice(speech) {
 
   for (let i = 0; i < synthesizedVoices.length; i++){
     //console.log(synthesizedVoices[i]);
-    if (synthesizedVoices[i].voiceURI === "Google UK English Female") { //Google US English, Google UK English Female, Google UK English Male
+    if (synthesizedVoices[i].voiceURI === "Google UK English Male") { //Google US English, Google UK English Female, Google UK English Male
       speechUtterance.voice = synthesizedVoices[i];
     }
   }
