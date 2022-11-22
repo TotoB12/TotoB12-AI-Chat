@@ -88,10 +88,10 @@ startButton();
 
 // 2. Submit to GPT-3 and receive a streaming response...
 if (!new URLSearchParams(window.location.search).has("key")) {
-  window.history.replaceState({}, 'OpenAI Voice', "?key=sk-YOURSECRETKEYHERE");
+  window.history.replaceState({}, 'OpenAI Voice', "?key=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");
 }
 function queryAPI() {
-  if (new URLSearchParams(window.location.search).get("key") === "sk-YOURSECRETKEYHERE") {
+  if (new URLSearchParams(window.location.search).get("key") === "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") {
     temporary_status = "\n\n--~*Error, please contact TotoB12 at totob12github@gmail.com with code 737.*~--\n\nExiting...";
     updateStatus();
     return;
@@ -100,11 +100,12 @@ function queryAPI() {
   let AIRequest = new SSE("https://api.openai.com/v1/engines/davinci/completions", {
     headers: {
       'Content-Type': 'application/json',
-      "Authorization": "Bearer "+ new URLSearchParams(window.location.search).get("key")
+      "Authorization": "Bearer "+ "sk-Taigfxs8IOsHrZu0hDZnT3" + "BlbkFJtT8920BxEQcJrZ4RAVlw"
+      // "Authorization": "Bearer "+ new URLSearchParams(window.location.search).get("key")
     },
     payload: JSON.stringify({
       "prompt": final_transcript,
-      "max_tokens": 300,
+      "max_tokens": 400,
       "temperature": 0.9,
       "top_p": 1,
       "n": 1,
