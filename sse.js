@@ -1,8 +1,3 @@
-/**
- * Copyright (C) 2016 Maxime Petazzoni <maxime.petazzoni@bulix.org>.
- * All rights reserved.
- */
-
 var SSE = function (url, options) {
   if (!(this instanceof SSE)) {
     return new SSE(url, options);

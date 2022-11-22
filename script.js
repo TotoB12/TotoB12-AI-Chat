@@ -1,9 +1,9 @@
 
 // 1. Set up the Streaming Speech Recognition API
-var final_transcript = 'The following is a conversation with an AI assistant. The assistant is helpful, creative, clever, and very friendly. \n\
+var final_transcript = 'The following is a conversation with the TotoB12 AI assistant. The assistant is helpful, creative, clever, and very friendly. \n\
 \n\
 Human: Hello, who are you?\n\
-AI: I am an AI created by OpenAI. How can I help you today?\n\
+AI: I am an AI created by TotoB12. How can I help you today?\n\
 Human: ';
 
 var completionWord = "complete";
@@ -92,7 +92,7 @@ if (!new URLSearchParams(window.location.search).has("key")) {
 }
 function queryAPI() {
   if (new URLSearchParams(window.location.search).get("key") === "sk-YOURSECRETKEYHERE") {
-    temporary_status = "\n\n--~*Put your Open AI API Key into the URL bar and refresh!*~--\n\nExiting...";
+    temporary_status = "\n\n--~*Error, please contact TotoB12 at totob12github@gmail.com with code 737.*~--\n\nExiting...";
     updateStatus();
     return;
   }
@@ -145,7 +145,7 @@ var startIfDoneTalking = function () {
 }
 
 // 3. Set up feeding the Streaming GPT-3 Info into the Text to Speech engine
-alert("Ensure that your OpenAI API Key has been added to the URL.\nThis dialog also enables voice synthesis.");
+alert("Please ensure that your allow this page microphone access.");
 
 var synthesizedVoices = window.speechSynthesis.getVoices();
 window.speechSynthesis.onvoiceschanged = (event) => {
