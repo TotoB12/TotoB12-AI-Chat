@@ -5,7 +5,7 @@ Human: Hello, who are you?\n\
 AI: I am TotoB12. How can I help you today?\n\
 Human: ';
 
-var completionWord = "complete";
+var completionWord = "completed";
 
 var temporary_status = 'Listening...';
 document.body.innerHTML = temporary_status;
@@ -147,7 +147,7 @@ var startIfDoneTalking = function () {
 }
 
 // 3. Set up feeding the Streaming GPT-3 Info into the Text to Speech engine
-alert("Please ensure that your allow this page microphone access.");
+alert("Please ensure that you allow this page microphone access.");
 
 var synthesizedVoices = window.speechSynthesis.getVoices();
 window.speechSynthesis.onvoiceschanged = (event) => {
@@ -158,7 +158,7 @@ function speakVoice(speech) {
 
   for (let i = 0; i < synthesizedVoices.length; i++){
     //console.log(synthesizedVoices[i]);
-    if (synthesizedVoices[i].voiceURI === "Google US English Male") { //Google US English, Google UK English Female, Google UK English Male
+    if (synthesizedVoices[i].voiceURI === "Google UK English Male") { //Google US English, Google UK English Female, Google UK English Male
       speechUtterance.voice = synthesizedVoices[i];
     }
   }

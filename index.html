@@ -1,25 +1,69 @@
 <head>
   <title>TotoB12 AI</title>
-  <link rel="icon" type="image/x-icon" href="https://totob12.github.io/things/favicon.ico">
-  <meta name="totob12's ai">
+  <link rel="icon" type="image/x-icon" href="totob12icon.png">
+  <meta name="totob12's AI">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="apple-touch-icon" href="https://totob12.github.io/things/favicon.ico">
+  <link rel="apple-touch-icon" href="totob12icon.png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Syne Mono">
 </head>
 <style>
-  body {
+
+  html {
     background-color: #1a1d21;
-    font-family: "Syne Mono", "monospace";
-    margin: 16px;
-    color: #02D41F;
   }
 
-  .ai {
-    font-family: "Syne Mono", "monospace";
-    margin: 16px;
-    color: green;
+  body {
+  background: #191c29;
+  width: var(--card-width);
+  height: var(--card-height);
+  position: relative;
+  border-radius: 6px;
+  font-family: "Syne Mono", "monospace";
+  margin: 64px;
+  padding: 16px;
+  color: #02D41F;
+}
+
+@media only screen and (max-width: 1000px) {
+  body {
+    margin: 0;
+    overflow-x: hidden;
   }
+}
+
+  
+body::before {
+  content: "";
+  width: 102%;
+  height: 102%;
+  border-radius: 8px;
+  background-image: linear-gradient(
+  var(--rotate)
+    , #5ddcff, #3c67e3 43%, #4e00c2);
+    position: absolute;
+    z-index: -1;
+    top: -1%;
+    left: -1%;
+    animation: spin 2.5s linear infinite;
+}
+
+@media only screen and (max-width: 1000px) {
+  body::before {
+    background-image: none;
+    width: 0%;
+    height: 0%;
+  }
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
 
   ::-webkit-scrollbar {
   width: 10px;
@@ -50,8 +94,6 @@
   
 </style>
 <body>
-  <div class="ai">
   <script src="sse.js"></script>
   <script src="script.js"></script>
-  </div>
 </body>
