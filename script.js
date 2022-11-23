@@ -107,7 +107,7 @@ function queryAPI() {
     payload: JSON.stringify({
       "prompt": final_transcript,
       "max_tokens": 400,
-      "temperature": 0.9,
+      "temperature": 0.7,
       "top_p": 1,
       "n": 1,
       "stream": true,
@@ -158,7 +158,7 @@ function speakVoice(speech) {
 
   for (let i = 0; i < synthesizedVoices.length; i++){
     //console.log(synthesizedVoices[i]);
-    if (synthesizedVoices[i].voiceURI === "Google UK English Male") { //Google US English, Google UK English Female, Google UK English Male
+    if (synthesizedVoices[i].voiceURI === "Google US English Male") { //Google US English, Google UK English Female, Google UK English Male
       speechUtterance.voice = synthesizedVoices[i];
     }
   }
