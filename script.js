@@ -1,3 +1,11 @@
+//const process = require('process');
+//var env = process.env;
+//var key = process.env.KEY_TOKEN;
+//app.set('key', envs('KEY_TOKEN'));
+//require('dotenv').config();
+console.log("hello world");
+var key = %KEY_TOKEN;
+
 // 1. Set up the Streaming Speech Recognition API
 var final_transcript = 'The following is a conversation with the TotoB12 AI. The assistant is helpful, creative, clever, and very friendly. \n\
 \n\
@@ -85,14 +93,14 @@ function startButton() {
 }
 startButton();
 
-// mine // keyopenai = "sk-ZkW9T2jPeSSz0SDsrKPST3B" + "lbkFJW7oS0ijczW2sbEcKPEGF";
+// mine // keyopenai = "kry";
 
 // 2. Submit to GPT-3 and receive a streaming response...
 // if (!new URLSearchParams(window.location.search).has("key")) {
 //   window.history.replaceState({}, 'OpenAI Voice', "?key=keyopenai");
 // }
 function queryAPI() {
-  if (new URLSearchParams(window.location.search).get("key") === "sk-ZkW9T2jPeSSz0SDsrKPST3B" + "lbkFJW7oS0ijczW2sbEcKPEGF") {
+  if (new URLSearchParams(window.location.search).get("key") === key) {
     temporary_status = "\n\n--~*Error, please contact TotoB12 at totob12github@gmail.com with code 737.*~--\n\nExiting...";
     updateStatus();
     return;
@@ -101,7 +109,7 @@ function queryAPI() {
   let AIRequest = new SSE("https://api.openai.com/v1/engines/davinci/completions", {
     headers: {
       'Content-Type': 'application/json',
-      "Authorization": "Bearer "+ "sk-ZkW9T2jPeSSz0SDsrKPST3B" + "lbkFJW7oS0ijczW2sbEcKPEGF"
+      "Authorization": "Bearer "+ key
       // "Authorization": "Bearer "+ new URLSearchParams(window.location.search).get("key")
     },
     payload: JSON.stringify({

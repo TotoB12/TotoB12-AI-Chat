@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "env": "^0.0.2",
+    "process": "^0.11.10",
+    "require": "^0.4.4"
+  }
+}
